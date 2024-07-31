@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+
+<div class="h-screen flex items-center justify-center flex-col">
+<%= render @employee %>
+<div class="mt-10 flex gap-5">
+<%= link_to "Edit", edit_employee_path(@employee),  class: "cursor-pointer text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" %> 
+<%= button_to "Delete", @employee, method: :delete, class: "cursor-pointer text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg" %>
+</div>
+<%= link_to "< Go Back", employees_path,  class: "mt-5 uderline cursor-pointer text-bold border-0 py-2 px-6 focus:outline-none rounded text-lg" %>
+</div>

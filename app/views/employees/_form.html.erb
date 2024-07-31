@@ -1,0 +1,46 @@
+<section class="text-gray-600 body-font flex justify-center items-center">
+  <div class="container px-5 py-24 flex-wrap w-fit">
+    <div class="bg-white p-8 rounded-lg shadow-md">
+      <h2 class="text-gray-900 text-lg mb-6 font-medium title-font">Employee Form</h2>
+      <%= form_with(model: employee, html: { class: "space-y-6" }) do |form| %>
+        <% if employee.errors.any? %>
+          <div class="text-red-500 mb-4">
+            <h2 class="text-lg font-semibold mb-2">
+              <%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:
+            </h2>
+
+            <ul class="list-disc pl-5">
+              <% employee.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="relative mb-4">
+          <%= form.label :name, class: "leading-7 text-sm text-gray-600" %>
+          <%= form.text_field :name, class: "w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 transition-colors duration-200 ease-in-out" %>
+        </div>
+
+        <div class="relative mb-4">
+          <%= form.label :email, class: "leading-7 text-sm text-gray-600" %>
+          <%= form.text_field :email, class: "w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 transition-colors duration-200 ease-in-out" %>
+        </div>
+
+        <div class="relative mb-4">
+          <%= form.label :phone, class: "leading-7 text-sm text-gray-600" %>
+          <%= form.text_field :phone, class: "w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 transition-colors duration-200 ease-in-out" %>
+        </div>
+
+        <div class="relative mb-4">
+          <%= form.label :profession, class: "leading-7 text-sm text-gray-600" %>
+          <%= form.text_field :profession, class: "w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 transition-colors duration-200 ease-in-out" %>
+        </div>
+
+        <div>
+          <%= form.submit 'Add', class: "cursor-pointer text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
